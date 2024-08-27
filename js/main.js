@@ -15,11 +15,11 @@ function jugarAhorcado() {
     alert("Bienvenido al juego del Ahorcado.\n A continuación aparecerá una palabra aleatoria de lista de palabras, la cuál deberás adivinar para ganar. Cada - significa una letra en la palabra.\n Pero deberás tener menos de 7 errores, ya que al séptimo, estarás ahorcado.\n ¡Buena Suerte!");
 
     while (errores < 7) {
-        let letra = prompt("Palabra: " + palabraIncompleta + "\nErrores: " + errores + "\nIngresa una letra del abecedario. No incluyas tildes, ni símbolos");
+        let letra = prompt("Palabra: " + palabraIncompleta + "\nErrores: " + errores + "\nIngresa una letra del abecedario. No incluyas tildes, ni símbolos; te contará como error.").toLowerCase();
         let letraEncontrada = false;
 
         for (let i = 0; i < palabra.length; i++) {
-            let letraPalabra = palabra[i];
+            let letraPalabra = palabra[i].toLowerCase();
             if (letra === letraPalabra) {
                 palabraIncompleta = actualizarPalabraIncompleta(palabraIncompleta, letra, i);
                 letraEncontrada = true;
